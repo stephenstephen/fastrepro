@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     environment:
+       MYSQL_ROOT_PASSWORD: fastrepro
+       MYSQL_DATABASE: fastrepro
+       MYSQL_USER: fastrepro 
+       MYSQL_PASSWORD: fastrepro
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8000:80"
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: fastrepro
+       WORDPRESS_DB_PASSWORD: fastrepro
+     volumes:
+      - ./:/var/www/html
+volumes:
+    db_data:

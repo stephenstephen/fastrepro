@@ -1,0 +1,19 @@
+2023-11-09T13:43:29+00:00 CRITICAL Allowed memory size of 67108864 bytes exhausted (tried to allocate 69632 bytes) dans /var/www/html/wp-content/plugins/elementor/includes/base/controls-stack.php à la ligne 633
+
+2023-11-09T13:44:07+00:00 CRITICAL Allowed memory size of 67108864 bytes exhausted (tried to allocate 69632 bytes) dans /var/www/html/wp-content/plugins/elementor/includes/base/controls-stack.php à la ligne 633
+
+2023-11-09T14:04:32+00:00 CRITICAL Allowed memory size of 67108864 bytes exhausted (tried to allocate 69632 bytes) dans /var/www/html/wp-content/plugins/elementor/includes/base/controls-stack.php à la ligne 633
+
+2023-11-09T14:15:18+00:00 CRITICAL Allowed memory size of 67108864 bytes exhausted (tried to allocate 40960 bytes) dans /var/www/html/wp-content/plugins/elementor/includes/base/widget-base.php à la ligne 183
+
+2023-11-09T14:54:01+00:00 CRITICAL Uncaught Error: Call to undefined method ElementorPro\Core\Utils::_unstable_check_document_permissions() in /var/www/html/wp-content/plugins/pro-elements/modules/payments/module.php:146
+Stack trace:
+#0 [internal function]: ElementorPro\Modules\Payments\Module->get_stripe_tax_rates(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#1 /var/www/html/wp-content/plugins/elementor/core/common/modules/ajax/module.php(176): call_user_func(Array, Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#2 /var/www/html/wp-includes/class-wp-hook.php(310): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-admin/admin-ajax.php(188): do_action('wp_ajax_element...')
+#6 {main}
+  thrown dans /var/www/html/wp-content/plugins/pro-elements/modules/payments/module.php à la ligne 146
+
