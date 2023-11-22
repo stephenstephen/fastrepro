@@ -11935,7 +11935,7 @@ msgstr "Impossible d’écrire le fichier %s"
 #: wp-includes/functions.php:2888 wp-includes/script-loader.php:962
 #: wp-admin/includes/file.php:965
 msgid "Sorry, you are not allowed to upload this file type."
-msgstr "Désolé, vous n’avez pas l’autorisation de téléverser ce type de fichier."
+msgstr "Désolé,T vous n’avez pas l’autorisation de téléverser ce type de fichier."
 
 #: wp-includes/functions.php:2883
 msgid "Empty filename"

@@ -23,5 +23,12 @@ services:
        WORDPRESS_DB_PASSWORD: fastrepro
      volumes:
       - ./:/var/www/html
+
+   adminer:
+     image: adminer
+     ports:
+       - 8083:8080
+     depends_on:
+       - db
 volumes:
     db_data:

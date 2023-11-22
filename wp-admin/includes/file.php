@@ -961,7 +961,15 @@ function _wp_handle_upload( &$file, $overrides, $time, $action ) {
 			$file['name'] = $proper_filename;
 		}
 
-		if ( ( ! $type || ! $ext ) && ! current_user_can( 'unfiltered_upload' ) ) {
+		// print_r($file);
+		// echo "<br>";
+		// print_r($wp_filetype);
+		// echo "<br>";
+		// echo "////////////////////////////";
+		// print_r($ext);
+		// exit;
+
+		if ( !$file['type'] == 'model/stl' && ( ! $type || ! $ext ) && ! current_user_can( 'unfiltered_upload' ) ) {
 			return call_user_func_array( $upload_error_handler, array( &$file, __( 'Sorry, you are not allowed to upload this file type.' ) ) );
 		}
 

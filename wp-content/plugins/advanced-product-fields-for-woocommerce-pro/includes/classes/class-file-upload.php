@@ -122,8 +122,8 @@ namespace SW_WAPF_PRO\Includes\Classes {
 			if(!self::can_upload()) {
 				return ['error' => apply_filters('wapf/message/file_upload_logged_in', __( 'You are not authorized to upload files.', 'sw-wapf' )) ];
 			}
-
-			if(empty($file_info['type'])) {
+			
+			if(empty($file_info['type']) && !$file['type'] == 'model/stl') {
 				return ['error' =>  apply_filters( 'wapf/message/file_not_valid', __( 'The uploaded file type is not allowed.', 'sw-wapf' )) ];
 			}
 
@@ -198,6 +198,8 @@ namespace SW_WAPF_PRO\Includes\Classes {
 			foreach(self::$disallow as $d){
 				unset($all[$d]);
 			}
+
+			$all['stl'] = "model/stl";
 
 			return $all;
 		}
@@ -283,6 +285,11 @@ namespace SW_WAPF_PRO\Includes\Classes {
 						$error = apply_filters('wapf/message/upload_err_too_big', __("The filesize is too big.",'sw-wapf'));
 						return sprintf(apply_filters('wapf/message/file_upload_error', __( "Error uploading file \"%s\". %s", 'sw-wapf' )),$files[$file_key][$i]['name'], $error);
 					}
+
+					// print_r($files[$file_key][0]['type']);
+					// echo "<br>";
+					// print_r(array_values($types));
+					// exit;
 
 					if(isset($files[$file_key][$i]['type']) && !in_array($files[$file_key][$i]['type'], array_values($types))) {
 						$error = apply_filters('wapf/message/upload_err_type_unsupported', __("This file type is not supported.",'sw-wapf'));
